@@ -1,0 +1,237 @@
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px;
+  }
+
+  .chat-container {
+    width: 95%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: max-height 0.3s;
+  }
+
+.chat-header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.header-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+  .chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f7f9fc;
+  }
+
+  .message {
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 25px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+.user-message {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  align-self: flex-end;            /* Forces right alignment */
+  border-radius: 20px 20px 5px 20px;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+  padding: 12px 18px;
+  max-width: 80%;                 /* Limits width for large messages */
+  width: fit-content;             /* Shrinks to content */
+  min-width: 50px;                /* Optional: Prevents overly tiny bubble */
+  text-align: left;
+  word-break: break-word;
+  margin-left: auto;              /* Double ensures right push */
+}
+
+.user-message:hover {
+  background: linear-gradient(135deg, #5b0ee8, #2050f5);
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.bot-wrap {
+  flex-direction: row;
+}
+
+.user-wrap {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;         /* Makes it circular */
+  background-size: cover;     /* Scales the image nicely */
+  background-position: center;
+  margin: 0 10px;
+}
+
+
+.bot-message {
+  background: #ffffff;
+  color: #333;
+  align-self: flex-start;
+  border-radius: 20px 20px 20px 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px 18px;
+  max-width: 80%;
+  width: fit-content;
+  min-width: 60px;
+  word-break: break-word;
+}
+
+
+  .message-timestamp {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 6px;
+    text-align: right;
+  }
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+#user-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 1rem;
+  background: #f2f4f8;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-left: 10px;
+}
+
+#send-btn, #voice-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.4);
+  transition: transform 0.2s;
+}
+
+#send-btn:hover, #voice-btn:hover {
+  transform: scale(1.1);
+}
+
+#mute-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.4);
+  transition: transform 0.2s;
+}
+#mute-btn:hover {
+  transform: scale(1.1);
+}
+
+
+
+  #suggestions {
+    padding: 15px;
+    background: #f7f9fc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #ddd;
+  }
+
+  #suggestions .chip {
+    background: #e0e4f1;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 0.85rem;
+  }
+
+  #suggestions .chip:hover {
+    background: #cfd8f1;
+  }
+
+  .icon-container {
+    padding: 10px;
+    background: #f7f9fc;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .icon-item {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background: #e0e4f1;
+    transition: background 0.3s;
+  }
+
+  .icon-item:hover {
+    background: #cfd8f1;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

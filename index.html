@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Troubleshooting Chatbot</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="chat-container">
+<div class="chat-header">
+  <img src="bot-avatar.png" alt="Bot" class="header-avatar">
+  Fixie-EOL Chatbot
+</div>
+
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <div id="suggestions"></div>
+
+    <div class="input-container">
+<input type="text" id="user-input" list="problem-list" placeholder="Describe your issue...">
+<datalist id="problem-list"></datalist>
+      <button id="send-btn">➤</button>
+      <button id="voice-btn">🎤</button>
+      <button id="mute-btn">🔈</button>
+
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+
+</html>
